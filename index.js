@@ -1,5 +1,5 @@
+const cors = require("cors");
 const express = require("express");
-const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const userRoute = require("./routes/user");
@@ -8,8 +8,9 @@ const productRoute = require("./routes/product");
 const cartRoute = require("./routes/cart");
 const orderRoute = require("./routes/order");
 const stripeRoute = require("./routes/stripe");
-const cors = require("cors");
+// const uuid = require("uuid/v8");
 
+const app = express();
 dotenv.config();
 
 mongoose
@@ -19,8 +20,11 @@ mongoose
     console.log("there has been a error", error);
   });
 
-app.use(cors());
+// middleware
 app.use(express.json());
+app.use(cors());
+
+// routes
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/products", productRoute);

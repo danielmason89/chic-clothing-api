@@ -1,13 +1,13 @@
 {
   "name": "chic-clothing-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "back-end for chic-clothing store-front",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon -r dotenv/config index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "danielMason",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
@@ -17,6 +17,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.4.1",
     "nodemon": "^2.0.18",
-    "stripe": "^9.11.0"
+    "stripe": "^9.11.0",
+    "uuid": "^8.3.2"
   }
 }
